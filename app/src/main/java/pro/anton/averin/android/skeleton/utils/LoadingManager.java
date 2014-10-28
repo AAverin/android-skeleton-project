@@ -27,7 +27,7 @@ public class LoadingManager {
         @Override
         protected Boolean doInBackground(Object... params) {
 
-
+            //add loading here
             return false;
         }
 
