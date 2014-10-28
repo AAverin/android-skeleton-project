@@ -73,3 +73,11 @@ Here's a list of things that are in the skeleton:
   - OnDoneCallback - a generic callback for asyncronous request when you don't want to add another one interface/listener 
   - TimeUtils - a utility on top of SimpleDateFormat abstracting some logic away
   - Utils - GlobalLayoutListener abstractions, rounding, setText for any object, initOrRestartLoader, AsyncTasks fixes
+
+:: Facebook SDK library already in
+:: Picasso, Retrofit, OKhttp, Jackson, Google Play Services, Bugsense, Mixpanel, OkIo, CardView and latest SupportLibrary
+
+:: A set of flat Button styles 
+
+:: Release/Beta/Debug build configurations
+:: Proguard settings for the most common set of libraries
