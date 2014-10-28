@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="Button_Green_Solid_Selected">#008504</color>
+    <color name="Button_Green_Stroke_Selected">#009C04</color>
+    <color name="Button_Green_Solid">#65ae2b</color>
+    <color name="Button_Green_Stroke">#007503</color>
+
+    <color name="Button_Blue_Solid_Selected">#00afc5</color>
+    <color name="Button_Blue_Stroke_Selected">#317782</color>
+    <color name="Button_Blue_Solid">#00bcd4</color>
+    <color name="Button_Blue_Stroke">#3a949c</color>
+
+    <color name="Button_Red_Solid_Selected">#990001</color>
+    <color name="Button_Red_Stroke_Selected">#560001</color>
+    <color name="Button_Red_Solid">#a60001</color>
+    <color name="Button_Red_Stroke">#700001</color>
+
+    <color name="Button_Gray_Start">#BABABA</color>
+    <color name="Button_Gray_End">#E0E0E0</color>
+    <color name="Button_Gray_Solid">#BABABA</color>
+    <color name="Button_Gray_Stroke">#A1A1A1</color>
+
+    <color name="Text_Default_Light">#ffffff</color>
+    <color name="Text_Default_Dark">#999999</color>
+    <color name="Text_Default">#333333</color>
+
+    <color name="Divider_Default">#b9b9b9</color>
+
+</resources>

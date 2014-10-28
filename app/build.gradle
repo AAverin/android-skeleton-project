@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://www.bugsense.com/gradle/"
+    }
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "20.0.0"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        applicationId "pro.anton.averin.android.skeleton"
+        minSdkVersion 13
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+
+    // Building from console
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        release {
+            runProguard true
+            proguardFile "proguard.config"
+            signingConfig signingConfigs.release
+        }
+        debuggableRelease.initWith(buildTypes.release)
+        debuggableRelease {
+            debuggable true
+            applicationIdSuffix '.debugRelease'
+            signingConfig signingConfigs.release
+        }
+        releaseDebug {
+            runProguard true
+            proguardFile "proguard-beta.config"
+            signingConfig signingConfigs.release
+        }
+        debug {
+            versionNameSuffix '-beta'
+            signingConfig signingConfigs.debug
+            applicationIdSuffix '.beta'
+        }
+        beta {
+            versionNameSuffix '-beta'
+            signingConfig signingConfigs.debug
+            applicationIdSuffix '.beta'
+        }
+        betaRelease {
+            runProguard true
+            proguardFile "proguard-beta.config"
+            versionNameSuffix '-beta'
+            applicationIdSuffix '.beta'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets.debuggableRelease.setRoot('src/release')
+    sourceSets.releaseDebug.setRoot('src/release')
+    sourceSets.betaRelease.setRoot('src/beta')
+    sourceSets.debug.setRoot('src/beta')
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:21+'
+    compile 'com.android.support:cardview-v7:+'
+    compile 'com.squareup.picasso:picasso:+'
+    compile 'com.squareup.okhttp:okhttp:+'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:+'
+    compile 'com.squareup.okio:okio:+'
+    compile 'com.bugsense.trace:bugsense:3.6'
+    compile 'com.mixpanel.android:mixpanel-android:4.0.+@aar'
+    compile "com.google.android.gms:play-services:5+"
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.+'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.4.+'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.4.+'
+    compile 'com.squareup.retrofit:retrofit:+'
+    compile project(':Libraries:facebook')
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="-4px"
+        android:left="-4px"
+        android:right="-4px">
+        <shape>
+            <solid android:color="@color/Button_Blue_Solid_Selected"/>
+            <stroke android:color="@color/Button_Blue_Stroke_Selected" android:width="4px"/>
+            <corners android:radius="1dp"/>
+        </shape>
+    </item>
+</layer-list>

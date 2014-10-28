@@ -1,0 +1,1 @@
+retrace.bat -verbose out.map stack.trace

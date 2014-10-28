@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidSkeleton</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="label_loading">Loading...</string>
+
+    <string name="label_empty"></string>
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
+
+    <string name="label_critical_error">Critical Error</string>
+    <string name="label_critical_error_message">Sorry, something went wrong, application will be restarted.\n\nSupport have been notified about the problem.</string>
+    <string name="label_critical_error_notify">Support have been notified about this issue, please try again later.</string>
+
+</resources>

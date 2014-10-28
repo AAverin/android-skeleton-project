@@ -1,0 +1,70 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="BaseDialogTheme" parent="android:Theme.Holo.Light.Panel">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:textColor">@color/Text_Default</item>
+    </style>
+
+    <style name="Text.Light">
+        <item name="android:textColor">@color/Text_Default_Light</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">@color/Text_Default_Light</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Button.Long">
+        <item name="android:layout_width">250dp</item>
+    </style>
+
+    <style name="Button.Short">
+        <item name="android:layout_width">136dp</item>
+    </style>
+
+    <style name="Button.Long.Green">
+        <item name="android:background">@drawable/button_green</item>
+    </style>
+
+    <style name="Button.Long.Blue">
+        <item name="android:background">@drawable/button_blue</item>
+    </style>
+
+    <style name="Button.Long.Red">
+        <item name="android:background">@drawable/button_red</item>
+    </style>
+
+    <style name="Button.Short.Green">
+        <item name="android:background">@drawable/button_green</item>
+    </style>
+
+    <style name="Button.Short.Blue">
+        <item name="android:background">@drawable/button_blue</item>
+    </style>
+
+    <style name="Button.Short.Red">
+        <item name="android:background">@drawable/button_red</item>
+    </style>
+
+    <style name="Button.Short.Gray">
+        <item name="android:background">@drawable/button_gray</item>
+    </style>
+
+    <style name="Button.Short.Time">
+        <item name="android:background">@drawable/button_gray_time</item>
+    </style>
+
+</resources>
