@@ -6,6 +6,7 @@ It contains various utilities, fixes, bolierplate code and stuff that I use regu
 It's not meant to be run on the device, so don't try that. It's just a basic architecture with a set of some neat abstractions.
 
 If you will be using this skeleton application for your development, I will be greatful if you could send me a 'thanks' in the way you believe satisfying=)
+And feel free to send me a message if you need something explained.
 
 Here's a list of things that are in the skeleton:
 :: architecture that supports both phones and tablets
