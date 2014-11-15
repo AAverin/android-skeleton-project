@@ -36,7 +36,7 @@ public class ExtendedTextView extends TextView {
 
         TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.ExtendedTextView, 0, 0);
 
-        fitText = attributes.getBoolean(R.styleable.ExtendedTextView_fitText, false);
+        fitText = attributes.getBoolean(R.styleable.ExtendedTextView_pro_aaverin_fitText, false);
         attributes.recycle();
 
         textPaint = new Paint();

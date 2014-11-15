@@ -8,6 +8,8 @@ import android.database.Cursor;
  */
 public abstract class BasicModel<T extends BasicModel> implements DBInterface<T> {
 
+    public final static String ID = "id";
+
     public long _id; //local database id
 
     public BasicModel() {
@@ -16,4 +18,8 @@ public abstract class BasicModel<T extends BasicModel> implements DBInterface<T>
 
     public abstract ContentValues asContentValues();
     public abstract BasicModel fromCursor(Cursor cursor);
+    //static convention: implement this
+    public static <T extends BasicModel> T getById(SQLiteDatabase db, long id) {
+        return null;
+    };
 }

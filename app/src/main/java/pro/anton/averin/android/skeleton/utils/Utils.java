@@ -134,4 +134,28 @@ public class Utils {
             }
         });
     }
+
+
+    public static String joinStrings(String... strings) {
+        StringBuilder builder = new StringBuilder();
+        for (String str : strings) {
+            builder.append(str);
+        }
+        return builder.toString();
+    }
+
+
+    public static void copyStreamToPath(InputStream in, String path) throws IOException {
+        FileOutputStream out = new FileOutputStream(path);
+        byte[] buff = new byte[1024];
+        int read = 0;
+        try {
+            while ((read = in.read(buff)) > 0) {
+                out.write(buff, 0, read);
+            }
+        } finally {
+            in.close();
+            out.close();
+        }
+    }
 }

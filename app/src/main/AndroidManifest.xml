@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    <uses-sdk
-        tools:node="replace" />
+    <!--<uses-sdk-->
+        <!--tools:node="replace" />-->
 
     <application
         android:name="pro.anton.averin.android.skeleton.BaseContext"

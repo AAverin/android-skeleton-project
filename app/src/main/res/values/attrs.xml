@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ExpandableRow">
-        <attr name="title" format="reference"/>
-        <attr name="isOpened" format="boolean"/>
-        <attr name="collapsible" format="boolean"/>
-    </declare-styleable>
-
     <declare-styleable name="ExtendedTextView">
-        <attr name="fitText" format="boolean"/>
+        <attr name="pro_aaverin_fitText" format="boolean"/>
     </declare-styleable>
 
 </resources>

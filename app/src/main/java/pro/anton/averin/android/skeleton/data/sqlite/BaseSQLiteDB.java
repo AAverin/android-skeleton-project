@@ -31,6 +31,14 @@ public class BaseSQLiteDB {
         }
     }
 
+    public BasicModel update_ByLocalId(BasicModel obj) throws SQLException {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        if (exists(obj)) {
+            return obj.update_byLocalId(db);
+        }
+        return null;
+    }
+
     public <T extends BasicModel> boolean exists(T sample) {
         SQLiteDatabase db = helper.getReadableDatabase();
         try {
