@@ -60,10 +60,15 @@ Here's a list of things that are in the skeleton:
 :: Data Layer
   - SharedPreferencesCache abstraction on top of generic preferences cache
   - PermanentCache sample that I use in many projects, uses SharedPreferencesCache abtraction leaving only save(), restore() and reset() to implement
+
 :: Amazing SQLiteTable abstraction that abstracts away necessity to remember column indexes. With BasicModel conjunction makes database layer neat and easy to maintain
-  - SQLiteDb class to store actual database logic
-  - BaseSQLiteDB class that has database helper and database initialization logic
+  - BaseSQLiteDB class with some common database stuff
+  - DataSQLiteDB for regular databases with onCreate/onUpgrade methods
+  - AssetsSQLiteDB for databases with assets-provided DBs (works with SQLiteAssetsHelper), add to gradle.build: compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
 :: BasicModel + DBInterface abstraction that allows to tie Model with database table, adding all database logic into the model class allowing to have everything model-database-related to be in one place.
+  - BasicModel generic abstraction to move all model-related db stuff into model
+  - SampleModel is an example of how sqlite model can be implemented in the project
 
 :: Utility classes
   - FontUtils - a simple utility that allows to use custom fonts. Can be used with conjunction to ExtendedTextView if necessary to make custom font text views (send me a message if you need an example)
@@ -73,6 +78,7 @@ Here's a list of things that are in the skeleton:
   - OnDoneCallback - a generic callback for asyncronous request when you don't want to add another one interface/listener 
   - TimeUtils - a utility on top of SimpleDateFormat abstracting some logic away
   - Utils - GlobalLayoutListener abstractions, rounding, setText for any object, initOrRestartLoader, AsyncTasks fixes
+  - MD5 - Utility class that allows to calculate and compare MD5 values
 
 :: Facebook SDK library already in
 :: Picasso, Retrofit, OKhttp, Jackson, Google Play Services, Bugsense, Mixpanel, OkIo, CardView and latest SupportLibrary
