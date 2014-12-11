@@ -15,5 +15,5 @@ public class Config {
     public final static String BUGSENSE_API_KEY = "";
     public final static String MIXPANEL_API_KEY = "";
 
-    public final static String BASE_URL = "";
+    public final static String BASE_URL = "http://sample.endpoint";
 }

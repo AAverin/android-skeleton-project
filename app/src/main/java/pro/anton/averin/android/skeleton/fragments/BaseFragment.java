@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.ViewGroup;
 
-import com.bugsense.trace.BugSenseHandler;
-
 import pro.anton.averin.android.skeleton.BaseContext;
 import pro.anton.averin.android.skeleton.activities.BaseActivity;
 
@@ -27,44 +25,44 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onCreate();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onCreate();");
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         baseContext = (BaseContext) getActivity().getApplicationContext();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onActivityCreated();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onActivityCreated();");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onStop();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onStop();");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onStart();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onStart();");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onResume();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onResume();");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onPause();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onPause();");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        BugSenseHandler.leaveBreadcrumb(getFragmentName() + " onDestroy();");
+//        Mint.leaveBreadcrumb(getFragmentName() + " onDestroy();");
     }
 
     public boolean handleBackPress() {

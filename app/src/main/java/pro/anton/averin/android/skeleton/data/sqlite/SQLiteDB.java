@@ -1,19 +1,24 @@
 package pro.anton.averin.android.skeleton.data.sqlite;
 
-import pro.anton.averin.android.skeleton.BaseContext;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 /**
  * Created by AAverin on 20.05.2014.
  */
-public class SQLiteDB extends BaseSQLiteDB {
+public class SQLiteDB extends DataSQLiteDB {
 
-    private BaseContext baseContext;
-
-    public SQLiteDB(BaseContext context) {
-        super(context);
-        this.baseContext = context;
+    public SQLiteDB(Context context) {
+        super(context, "skeleton_db.sqlite", 1);
     }
 
-    //actual db logic
+    @Override
+    public void onCreateDatabase(SQLiteDatabase db) {
 
+    }
+
+    @Override
+    public void onUpgradeDatabase(SQLiteDatabase db) {
+
+    }
 }

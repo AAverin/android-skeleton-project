@@ -10,7 +10,7 @@
       <configuration>
         <option name="SELECTED_BUILD_VARIANT" value="debug" />
         <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugJava" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
         <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateDebugSources" />
         <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateDebugTestSources" />
@@ -31,11 +31,13 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/generated/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/test/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/test/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/test/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/test/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/test/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/generated/test/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/beta/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/beta/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/beta/assets" type="java-resource" />
@@ -77,24 +79,27 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="cardview-v7-21.0.0" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-2.4.3" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-21.0.0" level="project" />
-    <orderEntry type="library" exported="" name="picasso-2.3.4" level="project" />
+    <orderEntry type="library" exported="" name="jackson-core-2.4.4" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-6.5.87" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-21.0.2" level="project" />
     <orderEntry type="library" exported="" name="gson-2.3" level="project" />
-    <orderEntry type="library" exported="" name="retrofit-1.7.1" level="project" />
-    <orderEntry type="library" exported="" name="jackson-databind-2.4.3" level="project" />
-    <orderEntry type="library" exported="" name="okhttp-2.0.0" level="project" />
-    <orderEntry type="library" exported="" name="jackson-annotations-2.4.3" level="project" />
+    <orderEntry type="library" exported="" name="picasso-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="retrofit-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="jackson-databind-2.4.4" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-21.0.2" level="project" />
+    <orderEntry type="library" exported="" name="mint-4.0.5" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="jackson-annotations-2.4.4" level="project" />
     <orderEntry type="library" exported="" name="okio-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-21.0.2" level="project" />
+    <orderEntry type="library" exported="" name="play-services-maps-6.5.87" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-urlconnection-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="mixpanel-android-4.0.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-5.0.89" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-21.0.0" level="project" />
-    <orderEntry type="library" exported="" name="okhttp-urlconnection-2.0.0" level="project" />
-    <orderEntry type="library" exported="" name="bugsense-3.6" level="project" />
+    <orderEntry type="library" exported="" name="play-services-location-6.5.87" level="project" />
     <orderEntry type="module" module-name="facebook" exported="" />
   </component>
 </module>

@@ -10,9 +10,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.BaseColumns;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by AAverin on 12.11.13.
@@ -72,7 +75,9 @@ public final class SQLiteTable {
         Iterator<String> iterator = tableIndex.iterator();
         while(iterator.hasNext()) {
             String entry = iterator.next();
-            if (!entry.equals(BaseColumns._ID)) {
+//            if (!entry.equals(BaseColumns._ID) && !entry.equals(BasicModel.ID)) {
+            String structureDetails = tableStructure.get(entry).toLowerCase();
+            if (!structureDetails.contains("autoincrement")) {
                 keysBuffer.append(entry);
                 valuesBuffer.append("?");
                 if (iterator.hasNext()) {
@@ -144,9 +149,12 @@ public final class SQLiteTable {
             return this;
         }
 
-        private String generateIndexSQL(String... columns) {
+        private String generateIndexSQL(boolean unique, String... columns) {
             StringBuilder indexSql = new StringBuilder();
-            indexSql.append("CREATE INDEX ");
+            indexSql.append("CREATE ");
+            if (unique)
+                indexSql.append("UNIQUE ");
+            indexSql.append("INDEX ");
             indexSql.append(sqLiteTable.tableName);
             indexSql.append("_index ON ");
             indexSql.append(sqLiteTable.tableName);
@@ -163,8 +171,8 @@ public final class SQLiteTable {
             return indexSql.toString();
         }
 
-        public Builder setIndexColumns(String... columns) {
-            sqLiteTable.indexSQL = generateIndexSQL(columns);
+        public Builder setIndexColumns(boolean unique, String... columns) {
+            sqLiteTable.indexSQL = generateIndexSQL(unique, columns);
             return this;
         }
 

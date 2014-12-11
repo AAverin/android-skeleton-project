@@ -41,7 +41,7 @@ android {
 
     buildTypes {
         release {
-            runProguard true
+            minifyEnabled true
             proguardFile "proguard.config"
             signingConfig signingConfigs.release
         }
@@ -52,12 +52,12 @@ android {
             signingConfig signingConfigs.release
         }
         releaseDebug {
-            runProguard true
+            minifyEnabled true
             proguardFile "proguard-beta.config"
             signingConfig signingConfigs.release
         }
         debug {
-            runProguard false
+            minifyEnabled false
             versionNameSuffix '-beta'
             signingConfig signingConfigs.debug
             applicationIdSuffix '.beta'
@@ -68,7 +68,7 @@ android {
             applicationIdSuffix '.beta'
         }
         betaRelease {
-            runProguard true
+            minifyEnabled true
             proguardFile "proguard-beta.config"
             versionNameSuffix '-beta'
             applicationIdSuffix '.beta'
@@ -92,7 +92,7 @@ dependencies {
     compile 'com.squareup.okio:okio:+'
     compile "com.splunk.mint:mint:4.0.5"
     compile 'com.mixpanel.android:mixpanel-android:4.0.+@aar'
-    compile "com.google.android.gms:play-services:6.1.+"
+    compile "com.google.android.gms:play-services-location:6.5.+"
     compile 'com.fasterxml.jackson.core:jackson-databind:2.4.+'
     compile 'com.fasterxml.jackson.core:jackson-core:2.4.+'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.4.+'

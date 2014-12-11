@@ -12,7 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 
-import com.bugsense.trace.BugSenseHandler;
+import com.splunk.mint.Mint;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONObject;
@@ -60,9 +60,8 @@ public abstract class BaseActivity extends FragmentActivity {
 
         loading = LoadingOverlay.getInstance();
 
-        BugSenseHandler.initAndStartSession(this, Config.BUGSENSE_API_KEY);
-        BugSenseHandler.addCrashExtraData("activity", this.getClass().getName());
-        BugSenseHandler.setLogging(true);
+//        Mint.initAndStartSession(this, Config.BUGSENSE_API_KEY);
+//        Mint.addExtraData("activity", this.getClass().getName());
 
         mixpanelAPI = MixpanelAPI.getInstance(this, Config.MIXPANEL_API_KEY);
 
@@ -99,7 +98,7 @@ public abstract class BaseActivity extends FragmentActivity {
         Logger.log_e(this, "onStart");
         activityState = ActivityState.created;
         loading.setActivity(this);
-        BugSenseHandler.leaveBreadcrumb(getScreenName() + " onStart();");
+        Mint.leaveBreadcrumb(getScreenName() + " onStart();");
     }
 
     @Override
@@ -107,7 +106,7 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onPause();
         Logger.log_e(this, "onPause");
         activityState = ActivityState.paused;
-        BugSenseHandler.leaveBreadcrumb(getScreenName() + " onPause();");
+//        Mint.leaveBreadcrumb(getScreenName() + " onPause();");
     }
 
     @Override
@@ -115,8 +114,8 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onResume();
         Logger.log_e(this, "onResume");
         activityState = ActivityState.resumed;
-        BugSenseHandler.leaveBreadcrumb(getScreenName() + " onResume();");
-        BugSenseHandler.flush(baseContext);
+//        Mint.leaveBreadcrumb(getScreenName() + " onResume();");
+//        Mint.flush();
     }
 
     @Override
@@ -124,13 +123,13 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onStop();
         Logger.log_e(this, "onStop");
         activityState = ActivityState.stopped;
-        BugSenseHandler.leaveBreadcrumb(getScreenName() + " onStop();");
+//        Mint.leaveBreadcrumb(getScreenName() + " onStop();");
     }
 
     @Override
     protected void onDestroy() {
         mixpanelAPI.flush();
-        BugSenseHandler.leaveBreadcrumb(getScreenName() + " onDestroy();");
+//        Mint.leaveBreadcrumb(getScreenName() + " onDestroy();");
         super.onDestroy();
     }
 

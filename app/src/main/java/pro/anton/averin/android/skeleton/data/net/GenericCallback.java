@@ -1,6 +1,6 @@
 package pro.anton.averin.android.skeleton.data.net;
 
-import com.bugsense.trace.BugSenseHandler;
+import com.splunk.mint.Mint;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +46,7 @@ public abstract class GenericCallback<T> implements Callback<T> {
             exceptionDetails.put("NetworkUrlPart" + j, urlPart);
             j++;
         }
-        BugSenseHandler.sendExceptionMap(exceptionDetails, new Exception("GenericCallbackException"));
+        Mint.logExceptionMap(exceptionDetails, new Exception("GenericCallbackException"));
         if (activity != null && activity.isActive()) {
             activity.handleGenericErrorRestart(3000);
             _failure(true, error);
