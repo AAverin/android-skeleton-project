@@ -33,6 +33,7 @@ public class LoadingManager {
 
         @Override
         protected void onPostExecute(Boolean result) {
+            isLoadingFinished = true;
             if (result) {
                 if (taskListener != null) {
                     taskListener.onLoadingFinished();
@@ -48,6 +49,7 @@ public class LoadingManager {
 
     private BaseContext baseContext;
     private BaseActivity activity;
+    public boolean isLoadingFinished = false;
 
     private static LoadingManager instance = null;
     public static LoadingManager getInstance(BaseActivity activity, LoadingManagerListener listener) {

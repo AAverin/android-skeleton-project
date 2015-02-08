@@ -219,4 +219,17 @@ public class Utils {
         }
         return lastValue;
     }
+    public static void setLocale(BaseContext baseContext, Locale locale) {
+        Resources res = baseContext.getResources();
+        Configuration configuration = new Configuration(res.getConfiguration());
+
+        Locale.setDefault(locale);
+
+        configuration.locale = locale;
+        res.updateConfiguration(configuration, res.getDisplayMetrics());
+    }
+
+    public static void setLocale(BaseContext baseContext, String language, String country) {
+        setLocale(baseContext, new Locale(language, country));
+    }
 }

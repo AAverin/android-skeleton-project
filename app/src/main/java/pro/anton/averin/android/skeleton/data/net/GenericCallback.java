@@ -34,18 +34,23 @@ public abstract class GenericCallback<T> implements Callback<T> {
 
         ArrayList<String> errorParts = splitBy(error.getMessage(), 128);
         int i = 0;
-        for (String errorPart : errorParts) {
-            exceptionDetails.put("NetworkFailPart" + i, errorPart);
-            i++;
+        if (errorParts != null) {
+            for (String errorPart : errorParts) {
+                exceptionDetails.put("NetworkFailPart" + i, errorPart);
+                i++;
+            }
         }
 
 
         ArrayList<String> urlParts = splitBy(error.getUrl(), 128);
         int j = 0;
-        for (String urlPart : urlParts) {
-            exceptionDetails.put("NetworkUrlPart" + j, urlPart);
-            j++;
+        if (urlParts != null) {
+            for (String urlPart : urlParts) {
+                exceptionDetails.put("NetworkUrlPart" + j, urlPart);
+                j++;
+            }
         }
+
         Mint.logExceptionMap(exceptionDetails, new Exception("GenericCallbackException"));
         if (activity != null && activity.isActive()) {
             activity.handleGenericErrorRestart(3000);
@@ -58,6 +63,9 @@ public abstract class GenericCallback<T> implements Callback<T> {
     public abstract void _failure(boolean genericHandeled, RetrofitError error);
 
     private ArrayList<String> splitBy(String what, int length) {
+        if (what == null) {
+            return null;
+        }
         String msg = what;
         ArrayList<String> parts = new ArrayList<String>();
         int index = 0;

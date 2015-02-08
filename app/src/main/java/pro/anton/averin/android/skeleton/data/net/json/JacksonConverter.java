@@ -28,7 +28,16 @@ public class JacksonConverter implements Converter {
         JavaType javaType = objectMapper.getTypeFactory().constructType(type);
 
         try {
-            return objectMapper.readValue(typedInput.in(), javaType);
+            InputStream in = typedInput.in();
+            try {
+                return objectMapper.readValue(in, javaType);
+            } finally {
+                 if (in != null) {
+                     in.close();
+                 }
+            }
+
+
         } catch (IOException e) {
             throw new ConversionException(e);
         }

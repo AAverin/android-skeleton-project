@@ -18,7 +18,8 @@ public class WrappedCheckBox extends LinearLayout {
     }
 
     public WrappedCheckBox(Context context, AttributeSet attrs) {
-        this(context, attrs, -1);
+        super(context, attrs);
+        init();
     }
 
     public WrappedCheckBox(Context context, AttributeSet attrs, int defStyle) {

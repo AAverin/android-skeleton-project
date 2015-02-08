@@ -8,6 +8,9 @@ import pro.anton.averin.android.skeleton.BaseContext;
 public class PermanentCache extends BaseCache {
 
     public String sample = "";
+    public String locale_lang = "ru";
+    public String locale_country = "RUS";
+    public String locale_variant = "";
 
     private SharedPreferencesCache preferencesCache;
 
@@ -25,18 +28,32 @@ public class PermanentCache extends BaseCache {
     }
 
     @Override
+    public AppSharedPreferences getPreferences() {
+        return preferencesCache.prefCache;
+    }
+
+    @Override
     public void save() {
         preferencesCache.prefCache.setStringSetting(SharedPreferencesCache.SHARED_OPTIONS.SAMPLE, sample);
+        preferencesCache.prefCache.setStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_LANG, locale_lang);
+        preferencesCache.prefCache.setStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_COUNTRY, locale_country);
+        preferencesCache.prefCache.setStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_VARIANT, locale_variant);
     }
 
     @Override
     public void restore() {
         sample = preferencesCache.prefCache.getStringSetting(SharedPreferencesCache.SHARED_OPTIONS.SAMPLE);
+        locale_lang = preferencesCache.prefCache.getStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_LANG);
+        locale_country = preferencesCache.prefCache.getStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_COUNTRY);
+        locale_variant = preferencesCache.prefCache.getStringSetting(SharedPreferencesCache.SHARED_OPTIONS.LOCALE_VARIANT);
     }
 
     @Override
     public void reset() {
         sample = "";
+        locale_lang = "";
+        locale_country = "";
+        locale_variant = "";
         save();
     }
 }

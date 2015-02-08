@@ -148,7 +148,9 @@ public abstract class BaseActivity extends FragmentActivity {
         }
     }
 
-
+    public static void restart(BaseContext baseContext) {
+        restart(baseContext, 0);
+    }
     public static void restart(BaseContext baseContext, int delay) {
         if (delay == 0) {
             delay = 1;
